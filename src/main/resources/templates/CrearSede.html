@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head th:replace="~{layout/layout :: head}"></head>
+    <link rel="stylesheet" th:href="@{/css/style.css}"> </head>
+</head>
+
+<body>
+<header th:replace="~{layout/layout :: navbar}"></header>
+<h1 class="page-content" th:text="${titulo}"></h1>
+<div class ="container" style="margin-top: 10px; padding: 5px; with: 80%">
+
+    <form th:objet="${objcSede}" th:action="@{/crearsede}" method="post">
+
+        <legend>FORMULARIO</legend>
+        <div class="mb-3">
+            <label  class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreform" aria-describedby="nombreHelp" field="nombre" name="nombre">
+            <div id="nombreHelp" class="form-text">Ej: Sede principal, campestre</div>
+        </div>
+        <div class="mb-3">
+            <label  class="form-label">direccion</label>
+            <input type="text" class="form-control" id="direccionform" aria-describedby="direccionHelp" field="direccion" name="direccion">
+            <div id="direccionhelp" class="form-text">Ej: calle 87 n 1-2</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="colegio" class="control-label">Colegio</label>
+            <select class="form-control" id="colegio" field="colegio" name="colegio">
+                <option th:each="colegio: ${objListColegios}"
+                        th:text="${colegio.nombre}" th:value="${colegio.idcolegio}">
+
+                </option>
+            </select>
+        </div>
+
+
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                <label class="form-check-label" for="disabledFieldsetCheck">
+                    Can’t check this
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+
+    </form>
+    <br/>
+    <a th:href="@{/Listarsedes}" class="vtb btn-danger">Cancelar</a>
+</div>
+
+<footer th:replace="~{layout/layout :: footer}"></footer>
+<div th:replace="~{layout/layout ::scripts}"></div>
+</body>
+</html>
