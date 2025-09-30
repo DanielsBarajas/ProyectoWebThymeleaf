@@ -66,7 +66,7 @@ public class ContactoController {
     }
     @GetMapping("Listarprimeroscontactos")
     public String listarprimeroscontactos(Model model) {
-        model.addAttribute("titulo", "Listar 6 Contactos");
+        model.addAttribute("titulo", "Listar 8 Contactos");
         model.addAttribute("contactos", contactoService.findFirstContactos());
         return "Consulta4";
     }

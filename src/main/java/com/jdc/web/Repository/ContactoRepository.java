@@ -14,6 +14,6 @@ import java.util.List;
 public interface ContactoRepository extends CrudRepository<ContactoEntity,Long> {
 
     @Transactional
-    @Query(value = "SELECT * FROM contactos LIMIT 6", nativeQuery = true)
+    @Query(value = "SELECT * FROM contactos LIMIT 8", nativeQuery = true)
     public List<ContactoEntity> findFirstContactos();
 }

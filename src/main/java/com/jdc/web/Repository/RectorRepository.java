@@ -15,7 +15,7 @@ public interface RectorRepository extends CrudRepository<RectorEntity, Long> {
 
 
     @Transactional
-    @Query("SELECT rect FROM RectorEntity rect WHERE rect.numdocumento = 1")
+    @Query("SELECT rect FROM RectorEntity rect WHERE rect.tipodocumento = 1")
     public List<RectorEntity> findByRector();
 
 
