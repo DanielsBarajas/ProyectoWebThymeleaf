@@ -24,8 +24,7 @@
             <th>Tipo Documento</th>
             <th>Fecha De Nacimiento</th>
             <th>Colegio</th>
-            <th></th>
-            <th></th>
+
 
         </tr>
         </thead>
@@ -39,15 +38,14 @@
             <td th:text="${rectorEntity.tipoDocumentoTexto}"></td>
             <td th:text="${rectorEntity.fechanacimiento}"></td>
             <td th:text="${rectorEntity.getColegioEntity().getNombre()}"></td>
-            <td class="text-center"><a class="btn btn-danger btn-xs" th:href="@{eliminarrector/} + ${rectorEntity.idrector}" onclick="return confirm('Estas seguro de eliminar el registro')" th:text="Eliminar"></a></td>
-            <td class="text-center"><a class="btn btn-info btn-xs" th:href="@{/editarRectorBy/{id} (id=${rectorEntity.idrector})}" th:text="Editar"></a></td>
+
 
         </tr>
 
         </tbody>
 
     </table>
-    <a th:href="@{crearrector}" class="btn btn-primary">Registar Rector</a>
+
 </div>
 <footer th:replace="~{layout/layout :: footer}"></footer>
 <div th:replace="~{layout/layout ::scripts}"></div>

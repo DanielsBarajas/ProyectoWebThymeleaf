@@ -64,7 +64,12 @@ public class ContactoController {
         contactoService.save(contactoExistente);
         return "redirect:/Listarcontactos";
     }
-
+    @GetMapping("Listarprimeroscontactos")
+    public String listarprimeroscontactos(Model model) {
+        model.addAttribute("titulo", "Listar 6 Contactos");
+        model.addAttribute("contactos", contactoService.findFirstContactos());
+        return "Consulta4";
+    }
 
 
 

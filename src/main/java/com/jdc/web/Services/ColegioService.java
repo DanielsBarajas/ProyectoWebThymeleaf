@@ -22,4 +22,6 @@ public interface ColegioService {
 
     public List<ColegioEntity> findBySede();
 
+    public List<ColegioEntity> findByLetra();
+
 }

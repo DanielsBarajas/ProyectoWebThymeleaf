@@ -63,4 +63,11 @@ public class SedeController {
         return "redirect:/Listarsedes";
     }
 
+    @GetMapping("Listarsedesmayores6")
+    public String listarIdMayoresAseis(Model model){
+        model.addAttribute("titulo","Listar Sedes Con Id <= 6");
+        model.addAttribute("sedes",sedeService.findSedeMayorIgualAseis());
+        return "Consulta2";
+    }
+
 }

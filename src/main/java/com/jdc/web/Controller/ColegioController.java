@@ -70,4 +70,13 @@ public class ColegioController {
         return "redirect:/Listarcolegios";
     }
 
+    @GetMapping("Listarcolegiosporletra")
+    public String listarColegioporletra(Model model){
+        model.addAttribute("titulo", "Listar Colegio Con Letra C");
+        model.addAttribute("colegios", colegioService.findByLetra());
+        return "Consulta3";
+
+
+    }
+
 }

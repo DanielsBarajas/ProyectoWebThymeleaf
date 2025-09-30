@@ -48,10 +48,8 @@ public class RectorEntity implements Serializable {
     private int numdocumento;
 
     @NotNull
-    @Size(min = 0, max = 20)
     @Column(name = "tipo_documento")
-    private String tipodocumento;
-
+    private int tipodocumento;
 
     @NotNull
     @Column (name = "fecha_nacimiento")
@@ -114,12 +112,12 @@ public class RectorEntity implements Serializable {
         this.numdocumento = num_documento;
     }
 
-    public String getTipodocumento() {
+    public int getTipodocumento() {
         return tipodocumento;
     }
 
-    public void setTipodocumento(String tipo_documento) {
-        this.tipodocumento = tipo_documento;
+    public void setTipodocumento(int tipodocumento) {
+        this.tipodocumento = tipodocumento;
     }
 
     public Date getFechanacimiento() {

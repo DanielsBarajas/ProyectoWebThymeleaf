@@ -44,4 +44,10 @@ public class SedeServicelmpl implements  SedeService {
     public void deleteById(Long id) {
         sedeRepository.deleteById(id);
     }
+
+    @Override
+    @Transactional
+    public List<SedeEntity> findSedeMayorIgualAseis() {
+        return sedeRepository.findSedeMayorIgualAseis();
+    }
 }

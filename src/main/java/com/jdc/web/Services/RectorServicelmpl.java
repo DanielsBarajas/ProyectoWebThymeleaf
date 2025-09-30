@@ -1,6 +1,7 @@
 package com.jdc.web.Services;
 
 
+import com.jdc.web.DTO.RectorDTO;
 import com.jdc.web.Repository.RectorRepository;
 import com.jdc.web.entities.RectorEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,12 @@ public class RectorServicelmpl implements RectorService{
 
     @Override
     @Transactional(readOnly = true)
-    public List<RectorEntity> findAll() {
-        return (List<RectorEntity>) rectorRepository.findAll();
+    public List<RectorDTO> findAll() {
+
+        List<RectorEntity> lista = (List<RectorEntity>) rectorRepository.findAll();
+
+
+        return lista.stream().map(rector -> new RectorDTO(rector.getIdrector(),rector.getNombre(),rector.getPrimerapellido(),rector.getSegundoapellido(),rector.getNumdocumento(),rector.getFechanacimiento(),rector.getTipodocumento(),rector.getColegio())).toList();
 
 
     }
@@ -45,4 +50,15 @@ public class RectorServicelmpl implements RectorService{
     public void deleteById(Long id) {
         rectorRepository.deleteById(id);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<RectorDTO> findByRector() {
+        List<RectorEntity> lista = (List<RectorEntity>) rectorRepository.findByRector();
+
+
+        return lista.stream().map(rector -> new RectorDTO(rector.getIdrector(),rector.getNombre(),rector.getPrimerapellido(),rector.getSegundoapellido(),rector.getNumdocumento(),rector.getFechanacimiento(),rector.getTipodocumento(),rector.getColegio())).toList();
+    }
+
+
 }

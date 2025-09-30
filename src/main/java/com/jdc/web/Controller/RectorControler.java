@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class RectorControler {
 
@@ -63,6 +65,15 @@ public class RectorControler {
         rectorExistente.setColegio(rector.getColegio());
         rectorService.save(rectorExistente);
         return "redirect:/Listarrectores";
+    }
+
+    @GetMapping("Listarrectores1")
+    public String findRector1(Model model){
+
+        model.addAttribute("titulo","Rectores = 1");
+
+        model.addAttribute("rectores",rectorService.findByRector());
+        return "Consulta1";
     }
 
 }

@@ -14,5 +14,7 @@ public interface SedeService {
     public void save(SedeEntity sedeEntity);
 
     public void deleteById(Long id);
+
+    public List<SedeEntity> findSedeMayorIgualAseis();
 }
 

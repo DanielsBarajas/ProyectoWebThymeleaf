@@ -14,5 +14,6 @@ public interface ContactoService {
     public void save(ContactoEntity contactoEntity);
 
     public void deleteById(Long id);
+    public List<ContactoEntity> findFirstContactos();
 }
 

@@ -44,4 +44,10 @@ public class ContactoServicelmpl implements ContactoService {
     @Transactional
     public void deleteById(Long id) {contactoRepository.deleteById(id);
     }
+
+    @Override
+    @Transactional
+    public List<ContactoEntity> findFirstContactos() {
+        return contactoRepository.findFirstContactos();
+    }
 }

@@ -62,10 +62,18 @@ public class ColegioServicelmpl implements ColegioService {
     public List<ColegioEntity> findByContacto(){
         return colegioRepository.findByContacto();
     }
+
     @Override
     @Transactional(readOnly = true)
     public List<ColegioEntity> findBySede(){
         return colegioRepository.findBySede();
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<ColegioEntity> findByLetra(){
+        return colegioRepository.findByLetra();
+    }
+
 
 }

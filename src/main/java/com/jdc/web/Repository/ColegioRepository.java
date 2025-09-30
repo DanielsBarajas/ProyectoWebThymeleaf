@@ -29,4 +29,9 @@ public interface ColegioRepository extends CrudRepository<ColegioEntity, Long> {
     @Query("SELECT col FROM ColegioEntity col WHERE col.idcolegio NOT IN"+"(SELECT dir.colegioEntity.idcolegio FROM SedeEntity dir) AND col.estado = true")
     public List<ColegioEntity> findBySede();
 
+    @Transactional
+    @Query("SELECT col FROM ColegioEntity col WHERE col.nombre LIKE 'C%'")
+    public List<ColegioEntity> findByLetra();
+
+
 }
